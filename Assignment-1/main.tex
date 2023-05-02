@@ -257,7 +257,7 @@ columns=fullflexible
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
-\textbf{12.13.5.10: Question}.\\A person buys a lottery ticket in 50 lotteries, in each of which his chance of winning a prize is {$\left(\frac{1}{100}\right)$}. What is the probability that he will win a prize 
+\textbf{A} person buys a lottery ticket in 50 lotteries, in each of which his chance of winning a prize is {$\left(\frac{1}{100}\right)$}. What is the probability that he will win a prize 
 (a) at least once
 (b) at least twice ? \\
 \begin{Large}
@@ -265,27 +265,26 @@ columns=fullflexible
 \\
 \end{Large}
 \textbf{Solution}:
-Let X represent the number of winning prizes in 50 lotteries. The trials are Bernoulli trials.\\Clearly, X has a binomial distribution with n=50 and p={$\frac{1}{100}$}\\
+X{$\in \{0,1,2,3...,.,50 \}$} .\\We will solve this using CDF.\\The trials are Bernoulli trials.\\X has a binomial distribution with n=50 and p={$\frac{1}{100}$}\\
 \begin{align}
 \begin{split}
    &\therefore q = 1 - p = 1 - {\frac{1}{100}} = {\frac{99}{100}} \\
-   & \therefore \pr{ X = x } = ^nC_xq^{n-x}p^x = ^{50}C_x{\left(\frac{99}{100}\right)^{50-x}}{\left(\frac{1}{100}\right)^x}
+   & \therefore \pr{ X = x } = \binom{n}{x}q^{n-x}p^x 
+   = \binom{50}{x}{\left(\frac{99}{100}\right)^{50-x}}{\left(\frac{1}{100}\right)^x}
 \end{split}
 \end{align}
-(a) $\pr{ winingatleastonce }$ = $\pr{ X \ge 1 }$ 
+(a) $\pr{ X \ge 1 }$ = 1 - $F_X(0)$ = 1 - $\pr{ X \le 0 }$
 \begin{equation} \label{eq1}
 \begin{split}
- & = 1 - \pr{ X < 1 } \\ 
- & = 1 - \pr{ X = 1 } \\
- & = 1 - ^{50}C_x{\left(\frac{99}{100}\right)^{50}}\\
+ & = 1 - \pr{ X = 0 } \\
+ & = 1 - \binom{50}{x}{\left(\frac{99}{100}\right)^{50}}\\
  & = 1-{\left(\frac{99}{100}\right)^{50}} 
 \end{split}
 \end{equation}
-(b) $\pr{atleasttwice}$ =  $\pr{ X \ge 2 }$ 
+(b)  $\pr{ X \ge 2 }$ = 1 - $F_X(1)$ = 1 - $\pr{ X \le 1 }$
 
 \begin{equation} \label{eq2}
 \begin{split}
- & = 1 - \pr{ X < 2 } \\ 
  & = 1 - \pr{ X \le 1 }\\
  & = 1 -[ \,\pr{ X = 0 } + \pr{ X = 1 }  ] \, \\
  & = 1 - \pr{ X = 0 }  -  \pr{ X = 1 }\\
