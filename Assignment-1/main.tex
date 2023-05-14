@@ -266,22 +266,14 @@ columns=fullflexible
 \end{Large}
 \textbf{Solution}:
 X{$\in \{0,1,2,3...,.,50 \}$} .\\We will solve this using CDF.\\The trials are Bernoulli trials.\\X has a binomial distribution with n=50 and p={$\frac{1}{100}$}\\
-\begin{center}
-\begin{tabular}{ |p{2cm}|p{1cm}|p{6cm}|}
-	
-	\hline
-	Parameter& Value &Description \\
-	\hline
-	n & 50 & no of lotteries\\
-		\hline
-	x & 0,1  & random variable \\
-		\hline
-	p & $\frac{1}{100}$ & Probability of winning a prize\\
-		\hline
-	q & $\frac{99}{100}$ & Probability of losing a prize\\
-		\hline
-\end{tabular}
-\end{center}
+
+\ref{tab:table1}
+\begin{table}[h]\centering
+	\input{table/table.tex}
+	\caption{}
+	\label{tab:table1}
+\end{table}	
+
 \begin{align}
 \begin{split}
    &\therefore q = 1 - p = 1 - {\frac{1}{100}} = {\frac{99}{100}} \\
